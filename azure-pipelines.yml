@@ -4,13 +4,17 @@
 # https://aka.ms/yaml
 
 trigger:
+  branches:
+    include:
+      - gh-readonly-queue/*
+pr:
 - main
 
 pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
+- script: echo Hello, world!!
   displayName: 'Run a one-line script'
 
 - script: |
