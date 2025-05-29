@@ -7,7 +7,7 @@ on:
   pull_request:
     branches:
       - main
-  merge_group:
+  merge_group: {}
   workflow_dispatch: {}
 
 jobs:
@@ -19,5 +19,6 @@ jobs:
         with:
           fetch-depth: 0
       - name: "Display info"
-        run: |
-          echo "${{ toJson(github) }}"
+        run: echo "${{ toJson(github) }}"
+      - name: Test
+        run: npm test
