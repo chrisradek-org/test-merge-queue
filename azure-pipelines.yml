@@ -24,6 +24,7 @@ steps:
 
 - script: |
     echo "SourceBranchName: $(Build.SourceBranchName)"
+    echo "SourceBranchName: $(Build.SourceBranch)"
     echo "PR Source Branch: $(System.PullRequest.SourceBranch)"
   displayName: 'Display branch information'
 
