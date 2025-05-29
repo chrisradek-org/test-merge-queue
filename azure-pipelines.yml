@@ -4,6 +4,10 @@
 # https://aka.ms/yaml
 
 trigger:
+  branches:
+    include:
+      - gh-readonly-queue/*
+pr:
 - main
 
 pool:
