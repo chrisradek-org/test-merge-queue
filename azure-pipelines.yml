@@ -22,6 +22,11 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
+- script: |
+    echo "SourceBranchName: $(Build.SourceBranchName)"
+    echo "PR Source Branch: $(System.PullRequest.SourceBranch)"
+  displayName: 'Display branch information'
+
 - script: npm test
   displayName: Run tests
   condition: and(succeeded(), eq(startsWith(variables['System.PullRequest.SourceBranch'], 'publish/'), false))
