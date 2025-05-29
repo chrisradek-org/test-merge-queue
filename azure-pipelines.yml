@@ -30,4 +30,7 @@ steps:
 
 - script: npm test
   displayName: Run tests
-  condition: and(succeeded(), eq(startsWith(variables['System.PullRequest.SourceBranch'], 'publish/'), false))
+  condition: and(succeeded(), and(
+    eq(startsWith(variables['Build.SourceBranch'], 'refs/heads/gh-readonly-queue/'), false),
+    eq(startsWith(variables['System.PullRequest.SourceBranch'], 'publish/'), false))
+    )
